@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
 import API from "../utils/api";
+import "./login.css";
 
 const Login = ({ setUserRole }) => {
   const [username, setUsername] = useState("");
@@ -28,9 +29,9 @@ const Login = ({ setUserRole }) => {
   };
 
   return (
-    <div>
+    <div className="container">
       <h1>Login</h1>
-      {error && <p style={{ color: "red" }}>{error}</p>}
+      {error && <p className="error">{error}</p>}
       <form onSubmit={handleLogin}>
         <input
           type="text"

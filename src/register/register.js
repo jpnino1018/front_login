@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import API from "../utils/api";
+import "./register.css";
 
 const Register = () => {
   const [username, setUsername] = useState("");
@@ -20,9 +21,9 @@ const Register = () => {
   };
 
   return (
-    <div>
+    <div className="container">
       <h1>Register</h1>
-      {error && <p style={{ color: "red" }}>{error}</p>}
+      {error && <p className="error">{error}</p>}
       <form onSubmit={handleRegister}>
         <input
           type="text"
